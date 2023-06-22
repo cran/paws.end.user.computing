@@ -13,8 +13,8 @@ workdocs_create_custom_metadata(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{ResourceId}{[required] The ID of the resource.}
 
@@ -26,6 +26,6 @@ document version.}
 \description{
 Adds one or more custom properties to the specified resource (a folder, document, or version).
 
-See \url{https://paws-r.github.io/docs/workdocs/create_custom_metadata.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_create_custom_metadata/} for full documentation.
 }
 \keyword{internal}

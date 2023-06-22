@@ -14,8 +14,8 @@ workdocs_get_document_path(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -29,6 +29,6 @@ the parent folders.}
 \description{
 Retrieves the path information (the hierarchy from the root folder) for the requested document.
 
-See \url{https://paws-r.github.io/docs/workdocs/get_document_path.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_get_document_path/} for full documentation.
 }
 \keyword{internal}

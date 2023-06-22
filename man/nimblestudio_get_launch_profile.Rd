@@ -7,13 +7,14 @@
 nimblestudio_get_launch_profile(launchProfileId, studioId)
 }
 \arguments{
-\item{launchProfileId}{[required] The Launch Profile ID.}
+\item{launchProfileId}{[required] The ID of the launch profile used to control access from the streaming
+session.}
 
 \item{studioId}{[required] The studio ID.}
 }
 \description{
 Get a launch profile.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/get_launch_profile.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile/} for full documentation.
 }
 \keyword{internal}

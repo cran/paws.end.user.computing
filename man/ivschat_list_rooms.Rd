@@ -6,6 +6,7 @@
 the API request is processed}
 \usage{
 ivschat_list_rooms(
+  loggingConfigurationIdentifier = NULL,
   maxResults = NULL,
   messageReviewHandlerUri = NULL,
   name = NULL,
@@ -13,6 +14,8 @@ ivschat_list_rooms(
 )
 }
 \arguments{
+\item{loggingConfigurationIdentifier}{Logging-configuration identifier.}
+
 \item{maxResults}{Maximum number of rooms to return. Default: 50.}
 
 \item{messageReviewHandlerUri}{Filters the list to match the specified message review handler URI.}
@@ -25,6 +28,6 @@ ivschat_list_rooms(
 \description{
 Gets summary information about all your rooms in the AWS region where the API request is processed. Results are sorted in descending order of \code{updateTime}.
 
-See \url{https://paws-r.github.io/docs/ivschat/list_rooms.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/ivschat_list_rooms/} for full documentation.
 }
 \keyword{internal}

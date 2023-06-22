@@ -7,7 +7,8 @@
 appstream_create_directory_config(
   DirectoryName,
   OrganizationalUnitDistinguishedNames,
-  ServiceAccountCredentials = NULL
+  ServiceAccountCredentials = NULL,
+  CertificateBasedAuthProperties = NULL
 )
 }
 \arguments{
@@ -19,10 +20,21 @@ accounts.}
 
 \item{ServiceAccountCredentials}{The credentials for the service account used by the fleet or image
 builder to connect to the directory.}
+
+\item{CertificateBasedAuthProperties}{The certificate-based authentication properties used to authenticate
+SAML 2.0 Identity Provider (IdP) user identities to Active Directory
+domain-joined streaming instances. Fallback is turned on by default when
+certificate-based authentication is \strong{Enabled} . Fallback allows users
+to log in using their AD domain password if certificate-based
+authentication is unsuccessful, or to unlock a desktop lock screen.
+\strong{Enabled_no_directory_login_fallback} enables certificate-based
+authentication, but does not allow users to log in using their AD domain
+password. Users will be disconnected to re-authenticate using
+certificates.}
 }
 \description{
 Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
 
-See \url{https://paws-r.github.io/docs/appstream/create_directory_config.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/appstream_create_directory_config/} for full documentation.
 }
 \keyword{internal}

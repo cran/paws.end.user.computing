@@ -7,7 +7,8 @@
 nimblestudio_list_streaming_images(nextToken = NULL, owner = NULL, studioId)
 }
 \arguments{
-\item{nextToken}{The token to request the next page of results.}
+\item{nextToken}{The token for the next set of results, or null if there are no more
+results.}
 
 \item{owner}{Filter this request to streaming images with the given owner}
 
@@ -16,6 +17,6 @@ nimblestudio_list_streaming_images(nextToken = NULL, owner = NULL, studioId)
 \description{
 List the streaming image resources available to this studio.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_streaming_images.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_images/} for full documentation.
 }
 \keyword{internal}

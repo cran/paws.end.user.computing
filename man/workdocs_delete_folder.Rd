@@ -7,14 +7,14 @@
 workdocs_delete_folder(AuthenticationToken = NULL, FolderId)
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{FolderId}{[required] The ID of the folder.}
 }
 \description{
 Permanently deletes the specified folder and its contents.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_folder.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_delete_folder/} for full documentation.
 }
 \keyword{internal}

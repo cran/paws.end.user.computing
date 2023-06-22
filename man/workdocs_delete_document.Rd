@@ -7,14 +7,14 @@
 workdocs_delete_document(AuthenticationToken = NULL, DocumentId)
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 }
 \description{
 Permanently deletes the specified document and its associated metadata.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_document.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_delete_document/} for full documentation.
 }
 \keyword{internal}

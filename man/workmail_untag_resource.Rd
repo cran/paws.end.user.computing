@@ -2,8 +2,8 @@
 % Please edit documentation in R/workmail_operations.R
 \name{workmail_untag_resource}
 \alias{workmail_untag_resource}
-\title{Untags the specified tags from the specified Amazon WorkMail
-organization resource}
+\title{Untags the specified tags from the specified WorkMail organization
+resource}
 \usage{
 workmail_untag_resource(ResourceARN, TagKeys)
 }
@@ -13,8 +13,8 @@ workmail_untag_resource(ResourceARN, TagKeys)
 \item{TagKeys}{[required] The tag keys.}
 }
 \description{
-Untags the specified tags from the specified Amazon WorkMail organization resource.
+Untags the specified tags from the specified WorkMail organization resource.
 
-See \url{https://paws-r.github.io/docs/workmail/untag_resource.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workmail_untag_resource/} for full documentation.
 }
 \keyword{internal}

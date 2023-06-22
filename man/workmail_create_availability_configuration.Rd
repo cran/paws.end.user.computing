@@ -17,8 +17,8 @@ workmail_create_availability_configuration(
 \item{ClientToken}{An idempotent token that ensures that an API request is executed only
 once.}
 
-\item{OrganizationId}{[required] The Amazon WorkMail organization for which the
-\code{AvailabilityConfiguration} will be created.}
+\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration} will
+be created.}
 
 \item{DomainName}{[required] The domain to which the provider applies.}
 
@@ -33,6 +33,6 @@ exactly one provider definition, either \code{EwsProvider} or
 \description{
 Creates an \code{AvailabilityConfiguration} for the given WorkMail organization and domain.
 
-See \url{https://paws-r.github.io/docs/workmail/create_availability_configuration.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workmail_create_availability_configuration/} for full documentation.
 }
 \keyword{internal}

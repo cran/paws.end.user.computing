@@ -8,9 +8,9 @@ nimblestudio_delete_streaming_session(clientToken = NULL, sessionId, studioId)
 }
 \arguments{
 \item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don’t specify a client token, the AWS
-SDK automatically generates a client token and uses it for the request
-to ensure idempotency.}
+idempotency of the request. If you don’t specify a client token, the
+Amazon Web Services SDK automatically generates a client token and uses
+it for the request to ensure idempotency.}
 
 \item{sessionId}{[required] The streaming session ID.}
 
@@ -19,6 +19,6 @@ to ensure idempotency.}
 \description{
 Deletes streaming session resource.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/delete_streaming_session.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_delete_streaming_session/} for full documentation.
 }
 \keyword{internal}

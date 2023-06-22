@@ -8,14 +8,14 @@ workdocs_delete_user(AuthenticationToken = NULL, UserId)
 }
 \arguments{
 \item{AuthenticationToken}{Amazon WorkDocs authentication token. Do not set this field when using
-administrative API actions, as in accessing the API using AWS
-credentials.}
+administrative API actions, as in accessing the API using Amazon Web
+Services credentials.}
 
 \item{UserId}{[required] The ID of the user.}
 }
 \description{
 Deletes the specified user from a Simple AD or Microsoft AD directory.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_user.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_delete_user/} for full documentation.
 }
 \keyword{internal}

@@ -13,8 +13,8 @@ workdocs_delete_custom_metadata(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{ResourceId}{[required] The ID of the resource, either a document or folder.}
 
@@ -29,6 +29,6 @@ specified resource.}
 \description{
 Deletes custom metadata from the specified resource.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_custom_metadata.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_delete_custom_metadata/} for full documentation.
 }
 \keyword{internal}

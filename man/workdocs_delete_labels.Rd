@@ -14,8 +14,8 @@ workdocs_delete_labels(
 \arguments{
 \item{ResourceId}{[required] The ID of the resource.}
 
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{Labels}{List of labels to delete from the resource.}
 
@@ -24,6 +24,6 @@ administrator credentials to access the API.}
 \description{
 Deletes the specified list of labels from a resource.
 
-See \url{https://paws-r.github.io/docs/workdocs/delete_labels.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_delete_labels/} for full documentation.
 }
 \keyword{internal}

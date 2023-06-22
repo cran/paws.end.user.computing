@@ -9,13 +9,14 @@ nimblestudio_list_studio_members(maxResults = NULL, nextToken = NULL, studioId)
 \arguments{
 \item{maxResults}{The max number of results to return in the response.}
 
-\item{nextToken}{The token to request the next page of results.}
+\item{nextToken}{The token for the next set of results, or null if there are no more
+results.}
 
 \item{studioId}{[required] The studio ID.}
 }
 \description{
 Get all users in a given studio membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_studio_members.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_list_studio_members/} for full documentation.
 }
 \keyword{internal}

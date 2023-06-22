@@ -13,8 +13,8 @@ workdocs_get_document_version(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -28,6 +28,6 @@ the source document.}
 \description{
 Retrieves version metadata for the specified document.
 
-See \url{https://paws-r.github.io/docs/workdocs/get_document_version.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_get_document_version/} for full documentation.
 }
 \keyword{internal}

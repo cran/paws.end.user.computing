@@ -14,8 +14,8 @@ workdocs_describe_document_versions(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -33,6 +33,6 @@ source document.}
 \description{
 Retrieves the document versions for the specified document.
 
-See \url{https://paws-r.github.io/docs/workdocs/describe_document_versions.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_describe_document_versions/} for full documentation.
 }
 \keyword{internal}

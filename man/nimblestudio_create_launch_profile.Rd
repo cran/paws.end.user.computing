@@ -18,9 +18,9 @@ nimblestudio_create_launch_profile(
 }
 \arguments{
 \item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don’t specify a client token, the AWS
-SDK automatically generates a client token and uses it for the request
-to ensure idempotency.}
+idempotency of the request. If you don’t specify a client token, the
+Amazon Web Services SDK automatically generates a client token and uses
+it for the request to ensure idempotency.}
 
 \item{description}{The description.}
 
@@ -40,12 +40,12 @@ used with this launch profile.}
 
 \item{studioId}{[required] The studio ID.}
 
-\item{tags}{A collection of labels, in the form of key:value pairs, that apply to
+\item{tags}{A collection of labels, in the form of key-value pairs, that apply to
 this resource.}
 }
 \description{
 Create a launch profile.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/create_launch_profile.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_create_launch_profile/} for full documentation.
 }
 \keyword{internal}

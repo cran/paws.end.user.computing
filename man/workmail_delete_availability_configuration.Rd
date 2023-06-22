@@ -8,14 +8,14 @@ organization and domain}
 workmail_delete_availability_configuration(OrganizationId, DomainName)
 }
 \arguments{
-\item{OrganizationId}{[required] The Amazon WorkMail organization for which the
-\code{AvailabilityConfiguration} will be deleted.}
+\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration} will
+be deleted.}
 
 \item{DomainName}{[required] The domain for which the \code{AvailabilityConfiguration} will be deleted.}
 }
 \description{
 Deletes the \code{AvailabilityConfiguration} for the given WorkMail organization and domain.
 
-See \url{https://paws-r.github.io/docs/workmail/delete_availability_configuration.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workmail_delete_availability_configuration/} for full documentation.
 }
 \keyword{internal}

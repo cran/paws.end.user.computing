@@ -17,8 +17,8 @@ workdocs_describe_folder_contents(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{FolderId}{[required] The ID of the folder.}
 
@@ -39,6 +39,6 @@ documents.}
 \description{
 Describes the contents of the specified folder, including its documents and subfolders.
 
-See \url{https://paws-r.github.io/docs/workdocs/describe_folder_contents.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_describe_folder_contents/} for full documentation.
 }
 \keyword{internal}

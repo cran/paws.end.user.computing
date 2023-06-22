@@ -14,8 +14,8 @@ workmail_list_mobile_device_access_overrides(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The Amazon WorkMail organization under which to list mobile device
-access overrides.}
+\item{OrganizationId}{[required] The WorkMail organization under which to list mobile device access
+overrides.}
 
 \item{UserId}{The WorkMail user under which you list the mobile device access
 overrides. Accepts the following types of user identities:
@@ -36,6 +36,6 @@ does not require a token.}
 \description{
 Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device.
 
-See \url{https://paws-r.github.io/docs/workmail/list_mobile_device_access_overrides.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workmail_list_mobile_device_access_overrides/} for full documentation.
 }
 \keyword{internal}

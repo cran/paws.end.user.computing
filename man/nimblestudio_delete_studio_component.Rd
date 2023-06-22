@@ -12,9 +12,9 @@ nimblestudio_delete_studio_component(
 }
 \arguments{
 \item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don’t specify a client token, the AWS
-SDK automatically generates a client token and uses it for the request
-to ensure idempotency.}
+idempotency of the request. If you don’t specify a client token, the
+Amazon Web Services SDK automatically generates a client token and uses
+it for the request to ensure idempotency.}
 
 \item{studioComponentId}{[required] The studio component ID.}
 
@@ -23,6 +23,6 @@ to ensure idempotency.}
 \description{
 Deletes a studio component resource.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/delete_studio_component.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio_component/} for full documentation.
 }
 \keyword{internal}

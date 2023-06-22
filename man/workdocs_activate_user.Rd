@@ -9,12 +9,12 @@ workdocs_activate_user(UserId, AuthenticationToken = NULL)
 \arguments{
 \item{UserId}{[required] The ID of the user.}
 
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 }
 \description{
 Activates the specified user. Only active users can access Amazon WorkDocs.
 
-See \url{https://paws-r.github.io/docs/workdocs/activate_user.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_activate_user/} for full documentation.
 }
 \keyword{internal}

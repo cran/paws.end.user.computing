@@ -13,8 +13,8 @@ workdocs_describe_groups(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{SearchQuery}{[required] A query to describe groups by group name.}
 
@@ -28,6 +28,6 @@ previous call.)}
 \description{
 Describes the groups specified by the query. Groups are defined by the underlying Active Directory.
 
-See \url{https://paws-r.github.io/docs/workdocs/describe_groups.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_describe_groups/} for full documentation.
 }
 \keyword{internal}

@@ -18,8 +18,8 @@ workdocs_describe_activities(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 
 \item{StartTime}{The timestamp that determines the starting time of the activities. The
 response includes the activities performed after the specified
@@ -53,6 +53,6 @@ within the parent folder (the indirect activity).}
 \description{
 Describes the user activities in a specified time period.
 
-See \url{https://paws-r.github.io/docs/workdocs/describe_activities.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_describe_activities/} for full documentation.
 }
 \keyword{internal}

@@ -13,9 +13,9 @@ nimblestudio_create_streaming_session_stream(
 }
 \arguments{
 \item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don’t specify a client token, the AWS
-SDK automatically generates a client token and uses it for the request
-to ensure idempotency.}
+idempotency of the request. If you don’t specify a client token, the
+Amazon Web Services SDK automatically generates a client token and uses
+it for the request to ensure idempotency.}
 
 \item{expirationInSeconds}{The expiration time in seconds.}
 
@@ -26,6 +26,6 @@ to ensure idempotency.}
 \description{
 Creates a streaming session stream for a streaming session.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/create_streaming_session_stream.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_session_stream/} for full documentation.
 }
 \keyword{internal}

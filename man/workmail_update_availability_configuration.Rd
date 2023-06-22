@@ -13,8 +13,8 @@ workmail_update_availability_configuration(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The Amazon WorkMail organization for which the
-\code{AvailabilityConfiguration} will be updated.}
+\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration} will
+be updated.}
 
 \item{DomainName}{[required] The domain to which the provider applies the availability configuration.}
 
@@ -31,6 +31,6 @@ the one provided.}
 \description{
 Updates an existing \code{AvailabilityConfiguration} for the given WorkMail organization and domain.
 
-See \url{https://paws-r.github.io/docs/workmail/update_availability_configuration.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workmail_update_availability_configuration/} for full documentation.
 }
 \keyword{internal}

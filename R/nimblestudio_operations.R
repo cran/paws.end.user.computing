@@ -8,14 +8,14 @@ NULL
 #' @description
 #' Accept EULAs.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/accept_eulas.html](https://paws-r.github.io/docs/nimblestudio/accept_eulas.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_accept_eulas/](https://www.paws-r-sdk.com/docs/nimblestudio_accept_eulas/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param eulaIds The EULA ID.
-#' @param studioId &#91;required&#93; A collection of EULA IDs.
+#' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
 #'
@@ -42,12 +42,12 @@ nimblestudio_accept_eulas <- function(clientToken = NULL, eulaIds = NULL, studio
 #' @description
 #' Create a launch profile.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_launch_profile.html](https://paws-r.github.io/docs/nimblestudio/create_launch_profile.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_launch_profile/](https://www.paws-r-sdk.com/docs/nimblestudio_create_launch_profile/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param description The description.
 #' @param ec2SubnetIds &#91;required&#93; Specifies the IDs of the EC2 subnets where streaming sessions will be
 #' accessible from. These subnets must support the specified instance
@@ -59,7 +59,7 @@ nimblestudio_accept_eulas <- function(clientToken = NULL, eulaIds = NULL, studio
 #' @param studioComponentIds &#91;required&#93; Unique identifiers for a collection of studio components that can be
 #' used with this launch profile.
 #' @param studioId &#91;required&#93; The studio ID.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
 #'
 #' @keywords internal
@@ -87,18 +87,18 @@ nimblestudio_create_launch_profile <- function(clientToken = NULL, description =
 #' @description
 #' Creates a streaming image resource in a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_streaming_image.html](https://paws-r.github.io/docs/nimblestudio/create_streaming_image.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_image/](https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_image/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param description A human-readable description of the streaming image.
 #' @param ec2ImageId &#91;required&#93; The ID of an EC2 machine image with which to create this streaming
 #' image.
 #' @param name &#91;required&#93; A friendly name for a streaming image resource.
 #' @param studioId &#91;required&#93; The studio ID.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
 #'
 #' @keywords internal
@@ -126,26 +126,27 @@ nimblestudio_create_streaming_image <- function(clientToken = NULL, description 
 #' @description
 #' Creates a streaming session in a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_streaming_session.html](https://paws-r.github.io/docs/nimblestudio/create_streaming_session.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_session/](https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_session/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param ec2InstanceType The EC2 Instance type used for the streaming session.
-#' @param launchProfileId The launch profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param ownedBy The user ID of the user that owns the streaming session. The user that
 #' owns the session will be logging into the session and interacting with
 #' the virtual workstation.
 #' @param streamingImageId The ID of the streaming image.
 #' @param studioId &#91;required&#93; The studio ID.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
 #'
 #' @keywords internal
 #'
 #' @rdname nimblestudio_create_streaming_session
-nimblestudio_create_streaming_session <- function(clientToken = NULL, ec2InstanceType = NULL, launchProfileId = NULL, ownedBy = NULL, streamingImageId = NULL, studioId, tags = NULL) {
+nimblestudio_create_streaming_session <- function(clientToken = NULL, ec2InstanceType = NULL, launchProfileId, ownedBy = NULL, streamingImageId = NULL, studioId, tags = NULL) {
   op <- new_operation(
     name = "CreateStreamingSession",
     http_method = "POST",
@@ -167,12 +168,12 @@ nimblestudio_create_streaming_session <- function(clientToken = NULL, ec2Instanc
 #' @description
 #' Creates a streaming session stream for a streaming session.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_streaming_session_stream.html](https://paws-r.github.io/docs/nimblestudio/create_streaming_session_stream.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_session_stream/](https://www.paws-r-sdk.com/docs/nimblestudio_create_streaming_session_stream/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param expirationInSeconds The expiration time in seconds.
 #' @param sessionId &#91;required&#93; The streaming session ID.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -197,26 +198,26 @@ nimblestudio_create_streaming_session_stream <- function(clientToken = NULL, exp
 }
 .nimblestudio$operations$create_streaming_session_stream <- nimblestudio_create_streaming_session_stream
 
-#' Create a new Studio
+#' Create a new studio
 #'
 #' @description
-#' Create a new Studio.
+#' Create a new studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_studio.html](https://paws-r.github.io/docs/nimblestudio/create_studio.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_studio/](https://www.paws-r-sdk.com/docs/nimblestudio_create_studio/) for full documentation.
 #'
-#' @param adminRoleArn &#91;required&#93; The IAM role that Studio Admins will assume when logging in to the
+#' @param adminRoleArn &#91;required&#93; The IAM role that studio admins will assume when logging in to the
 #' Nimble Studio portal.
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param displayName &#91;required&#93; A friendly name for the studio.
 #' @param studioEncryptionConfiguration The studio encryption configuration.
 #' @param studioName &#91;required&#93; The studio name that is used in the URL of the Nimble Studio portal when
 #' accessed by Nimble Studio users.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
-#' @param userRoleArn &#91;required&#93; The IAM role that Studio Users will assume when logging in to the Nimble
+#' @param userRoleArn &#91;required&#93; The IAM role that studio users will assume when logging in to the Nimble
 #' Studio portal.
 #'
 #' @keywords internal
@@ -244,27 +245,27 @@ nimblestudio_create_studio <- function(adminRoleArn, clientToken = NULL, display
 #' @description
 #' Creates a studio component resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/create_studio_component.html](https://paws-r.github.io/docs/nimblestudio/create_studio_component.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_create_studio_component/](https://www.paws-r-sdk.com/docs/nimblestudio_create_studio_component/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param configuration The configuration of the studio component, based on component type.
 #' @param description The description.
 #' @param ec2SecurityGroupIds The EC2 security groups that control access to the studio component.
 #' @param initializationScripts Initialization scripts for studio components.
 #' @param name &#91;required&#93; The name for the studio component.
 #' @param runtimeRoleArn An IAM role attached to a Studio Component that gives the studio
-#' component access to AWS resources at anytime while the instance is
-#' running.
+#' component access to Amazon Web Services resources at anytime while the
+#' instance is running.
 #' @param scriptParameters Parameters for the studio component scripts.
 #' @param secureInitializationRoleArn An IAM role attached to Studio Component when the system initialization
-#' script runs which give the studio component access to AWS resources when
-#' the system initialization script runs.
+#' script runs which give the studio component access to Amazon Web
+#' Services resources when the system initialization script runs.
 #' @param studioId &#91;required&#93; The studio ID.
 #' @param subtype The specific subtype of a studio component.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
 #' @param type &#91;required&#93; The type of the studio component.
 #'
@@ -293,13 +294,14 @@ nimblestudio_create_studio_component <- function(clientToken = NULL, configurati
 #' @description
 #' Permanently delete a launch profile.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_launch_profile.html](https://paws-r.github.io/docs/nimblestudio/delete_launch_profile.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_launch_profile/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_launch_profile/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -327,15 +329,15 @@ nimblestudio_delete_launch_profile <- function(clientToken = NULL, launchProfile
 #' @description
 #' Delete a user from launch profile membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_launch_profile_member.html](https://paws-r.github.io/docs/nimblestudio/delete_launch_profile_member.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_launch_profile_member/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_launch_profile_member/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
-#' @param principalId &#91;required&#93; The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
+#' @param principalId &#91;required&#93; The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -363,12 +365,12 @@ nimblestudio_delete_launch_profile_member <- function(clientToken = NULL, launch
 #' @description
 #' Delete streaming image.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_streaming_image.html](https://paws-r.github.io/docs/nimblestudio/delete_streaming_image.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_streaming_image/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_streaming_image/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param streamingImageId &#91;required&#93; The streaming image ID.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -397,12 +399,12 @@ nimblestudio_delete_streaming_image <- function(clientToken = NULL, streamingIma
 #' @description
 #' Deletes streaming session resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_streaming_session.html](https://paws-r.github.io/docs/nimblestudio/delete_streaming_session.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_streaming_session/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_streaming_session/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param sessionId &#91;required&#93; The streaming session ID.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -431,12 +433,12 @@ nimblestudio_delete_streaming_session <- function(clientToken = NULL, sessionId,
 #' @description
 #' Delete a studio resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_studio.html](https://paws-r.github.io/docs/nimblestudio/delete_studio.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -464,12 +466,12 @@ nimblestudio_delete_studio <- function(clientToken = NULL, studioId) {
 #' @description
 #' Deletes a studio component resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_studio_component.html](https://paws-r.github.io/docs/nimblestudio/delete_studio_component.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio_component/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio_component/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param studioComponentId &#91;required&#93; The studio component ID.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -498,14 +500,13 @@ nimblestudio_delete_studio_component <- function(clientToken = NULL, studioCompo
 #' @description
 #' Delete a user from studio membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/delete_studio_member.html](https://paws-r.github.io/docs/nimblestudio/delete_studio_member.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio_member/](https://www.paws-r-sdk.com/docs/nimblestudio_delete_studio_member/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param principalId &#91;required&#93; The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param principalId &#91;required&#93; The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -528,12 +529,12 @@ nimblestudio_delete_studio_member <- function(clientToken = NULL, principalId, s
 }
 .nimblestudio$operations$delete_studio_member <- nimblestudio_delete_studio_member
 
-#' Get Eula
+#' Get EULA
 #'
 #' @description
-#' Get Eula.
+#' Get EULA.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_eula.html](https://paws-r.github.io/docs/nimblestudio/get_eula.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_eula/](https://www.paws-r-sdk.com/docs/nimblestudio_get_eula/) for full documentation.
 #'
 #' @param eulaId &#91;required&#93; The EULA ID.
 #'
@@ -562,9 +563,10 @@ nimblestudio_get_eula <- function(eulaId) {
 #' @description
 #' Get a launch profile.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_launch_profile.html](https://paws-r.github.io/docs/nimblestudio/get_launch_profile.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile/](https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile/) for full documentation.
 #'
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -594,9 +596,10 @@ nimblestudio_get_launch_profile <- function(launchProfileId, studioId) {
 #' @description
 #' Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_launch_profile_details.html](https://paws-r.github.io/docs/nimblestudio/get_launch_profile_details.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_details/](https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_details/) for full documentation.
 #'
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -624,13 +627,14 @@ nimblestudio_get_launch_profile_details <- function(launchProfileId, studioId) {
 #' @description
 #' Get a launch profile initialization.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_launch_profile_initialization.html](https://paws-r.github.io/docs/nimblestudio/get_launch_profile_initialization.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_initialization/](https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_initialization/) for full documentation.
 #'
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param launchProfileProtocolVersions &#91;required&#93; The launch profile protocol versions supported by the client.
 #' @param launchPurpose &#91;required&#93; The launch purpose.
-#' @param platform &#91;required&#93; The platform where this Launch Profile will be used, either WINDOWS or
-#' LINUX.
+#' @param platform &#91;required&#93; The platform where this Launch Profile will be used, either Windows or
+#' Linux.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -658,11 +662,11 @@ nimblestudio_get_launch_profile_initialization <- function(launchProfileId, laun
 #' @description
 #' Get a user persona in launch profile membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_launch_profile_member.html](https://paws-r.github.io/docs/nimblestudio/get_launch_profile_member.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_member/](https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_member/) for full documentation.
 #'
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
-#' @param principalId &#91;required&#93; The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
+#' @param principalId &#91;required&#93; The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -690,7 +694,7 @@ nimblestudio_get_launch_profile_member <- function(launchProfileId, principalId,
 #' @description
 #' Get streaming image.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_streaming_image.html](https://paws-r.github.io/docs/nimblestudio/get_streaming_image.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_image/](https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_image/) for full documentation.
 #'
 #' @param streamingImageId &#91;required&#93; The streaming image ID.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -720,7 +724,7 @@ nimblestudio_get_streaming_image <- function(streamingImageId, studioId) {
 #' @description
 #' Gets StreamingSession resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_streaming_session.html](https://paws-r.github.io/docs/nimblestudio/get_streaming_session.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session/](https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session/) for full documentation.
 #'
 #' @param sessionId &#91;required&#93; The streaming session ID.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -745,12 +749,42 @@ nimblestudio_get_streaming_session <- function(sessionId, studioId) {
 }
 .nimblestudio$operations$get_streaming_session <- nimblestudio_get_streaming_session
 
+#' Gets StreamingSessionBackup resource
+#'
+#' @description
+#' Gets `StreamingSessionBackup` resource.
+#'
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session_backup/](https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session_backup/) for full documentation.
+#'
+#' @param backupId &#91;required&#93; The ID of the backup.
+#' @param studioId &#91;required&#93; The studio ID.
+#'
+#' @keywords internal
+#'
+#' @rdname nimblestudio_get_streaming_session_backup
+nimblestudio_get_streaming_session_backup <- function(backupId, studioId) {
+  op <- new_operation(
+    name = "GetStreamingSessionBackup",
+    http_method = "GET",
+    http_path = "/2020-08-01/studios/{studioId}/streaming-session-backups/{backupId}",
+    paginator = list()
+  )
+  input <- .nimblestudio$get_streaming_session_backup_input(backupId = backupId, studioId = studioId)
+  output <- .nimblestudio$get_streaming_session_backup_output()
+  config <- get_config()
+  svc <- .nimblestudio$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.nimblestudio$operations$get_streaming_session_backup <- nimblestudio_get_streaming_session_backup
+
 #' Gets a StreamingSessionStream for a streaming session
 #'
 #' @description
 #' Gets a StreamingSessionStream for a streaming session.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_streaming_session_stream.html](https://paws-r.github.io/docs/nimblestudio/get_streaming_session_stream.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session_stream/](https://www.paws-r-sdk.com/docs/nimblestudio_get_streaming_session_stream/) for full documentation.
 #'
 #' @param sessionId &#91;required&#93; The streaming session ID.
 #' @param streamId &#91;required&#93; The streaming session stream ID.
@@ -776,12 +810,12 @@ nimblestudio_get_streaming_session_stream <- function(sessionId, streamId, studi
 }
 .nimblestudio$operations$get_streaming_session_stream <- nimblestudio_get_streaming_session_stream
 
-#' Get a Studio resource
+#' Get a studio resource
 #'
 #' @description
-#' Get a Studio resource.
+#' Get a studio resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_studio.html](https://paws-r.github.io/docs/nimblestudio/get_studio.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_studio/](https://www.paws-r-sdk.com/docs/nimblestudio_get_studio/) for full documentation.
 #'
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -810,7 +844,7 @@ nimblestudio_get_studio <- function(studioId) {
 #' @description
 #' Gets a studio component resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_studio_component.html](https://paws-r.github.io/docs/nimblestudio/get_studio_component.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_studio_component/](https://www.paws-r-sdk.com/docs/nimblestudio_get_studio_component/) for full documentation.
 #'
 #' @param studioComponentId &#91;required&#93; The studio component ID.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -840,10 +874,9 @@ nimblestudio_get_studio_component <- function(studioComponentId, studioId) {
 #' @description
 #' Get a user's membership in a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/get_studio_member.html](https://paws-r.github.io/docs/nimblestudio/get_studio_member.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_get_studio_member/](https://www.paws-r-sdk.com/docs/nimblestudio_get_studio_member/) for full documentation.
 #'
-#' @param principalId &#91;required&#93; The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' @param principalId &#91;required&#93; The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -866,15 +899,16 @@ nimblestudio_get_studio_member <- function(principalId, studioId) {
 }
 .nimblestudio$operations$get_studio_member <- nimblestudio_get_studio_member
 
-#' List Eula Acceptances
+#' List EULA acceptances
 #'
 #' @description
-#' List Eula Acceptances.
+#' List EULA acceptances.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_eula_acceptances.html](https://paws-r.github.io/docs/nimblestudio/list_eula_acceptances.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_eula_acceptances/](https://www.paws-r-sdk.com/docs/nimblestudio_list_eula_acceptances/) for full documentation.
 #'
 #' @param eulaIds The list of EULA IDs that have been previously accepted.
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -897,15 +931,16 @@ nimblestudio_list_eula_acceptances <- function(eulaIds = NULL, nextToken = NULL,
 }
 .nimblestudio$operations$list_eula_acceptances <- nimblestudio_list_eula_acceptances
 
-#' List Eulas
+#' List EULAs
 #'
 #' @description
-#' List Eulas.
+#' List EULAs.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_eulas.html](https://paws-r.github.io/docs/nimblestudio/list_eulas.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_eulas/](https://www.paws-r-sdk.com/docs/nimblestudio_list_eulas/) for full documentation.
 #'
 #' @param eulaIds The list of EULA IDs that should be returned
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #'
 #' @keywords internal
 #'
@@ -932,11 +967,13 @@ nimblestudio_list_eulas <- function(eulaIds = NULL, nextToken = NULL) {
 #' @description
 #' Get all users in a given launch profile membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_launch_profile_members.html](https://paws-r.github.io/docs/nimblestudio/list_launch_profile_members.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_launch_profile_members/](https://www.paws-r-sdk.com/docs/nimblestudio_list_launch_profile_members/) for full documentation.
 #'
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param maxResults The max number of results to return in the response.
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -964,12 +1001,12 @@ nimblestudio_list_launch_profile_members <- function(launchProfileId, maxResults
 #' @description
 #' List all the launch profiles a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_launch_profiles.html](https://paws-r.github.io/docs/nimblestudio/list_launch_profiles.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_launch_profiles/](https://www.paws-r-sdk.com/docs/nimblestudio_list_launch_profiles/) for full documentation.
 #'
 #' @param maxResults The max number of results to return in the response.
-#' @param nextToken The token to request the next page of results.
-#' @param principalId The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
+#' @param principalId The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param states Filter this request to launch profiles in any of the given states.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -998,9 +1035,10 @@ nimblestudio_list_launch_profiles <- function(maxResults = NULL, nextToken = NUL
 #' @description
 #' List the streaming image resources available to this studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_streaming_images.html](https://paws-r.github.io/docs/nimblestudio/list_streaming_images.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_images/](https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_images/) for full documentation.
 #'
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param owner Filter this request to streaming images with the given owner
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -1024,15 +1062,48 @@ nimblestudio_list_streaming_images <- function(nextToken = NULL, owner = NULL, s
 }
 .nimblestudio$operations$list_streaming_images <- nimblestudio_list_streaming_images
 
+#' Lists the backups of a streaming session in a studio
+#'
+#' @description
+#' Lists the backups of a streaming session in a studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_session_backups/](https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_session_backups/) for full documentation.
+#'
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
+#' @param ownedBy The user ID of the user that owns the streaming session.
+#' @param studioId &#91;required&#93; The studio ID.
+#'
+#' @keywords internal
+#'
+#' @rdname nimblestudio_list_streaming_session_backups
+nimblestudio_list_streaming_session_backups <- function(nextToken = NULL, ownedBy = NULL, studioId) {
+  op <- new_operation(
+    name = "ListStreamingSessionBackups",
+    http_method = "GET",
+    http_path = "/2020-08-01/studios/{studioId}/streaming-session-backups",
+    paginator = list()
+  )
+  input <- .nimblestudio$list_streaming_session_backups_input(nextToken = nextToken, ownedBy = ownedBy, studioId = studioId)
+  output <- .nimblestudio$list_streaming_session_backups_output()
+  config <- get_config()
+  svc <- .nimblestudio$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.nimblestudio$operations$list_streaming_session_backups <- nimblestudio_list_streaming_session_backups
+
 #' Lists the streaming sessions in a studio
 #'
 #' @description
 #' Lists the streaming sessions in a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_streaming_sessions.html](https://paws-r.github.io/docs/nimblestudio/list_streaming_sessions.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_sessions/](https://www.paws-r-sdk.com/docs/nimblestudio_list_streaming_sessions/) for full documentation.
 #'
 #' @param createdBy Filters the request to streaming sessions created by the given user.
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param ownedBy Filters the request to streaming session owned by the given user
 #' @param sessionIds Filters the request to only the provided session IDs.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -1060,12 +1131,13 @@ nimblestudio_list_streaming_sessions <- function(createdBy = NULL, nextToken = N
 #' Lists the StudioComponents in a studio
 #'
 #' @description
-#' Lists the StudioComponents in a studio.
+#' Lists the `StudioComponents` in a studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_studio_components.html](https://paws-r.github.io/docs/nimblestudio/list_studio_components.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_studio_components/](https://www.paws-r-sdk.com/docs/nimblestudio_list_studio_components/) for full documentation.
 #'
 #' @param maxResults The max number of results to return in the response.
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param states Filters the request to studio components that are in one of the given
 #' states.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -1097,10 +1169,11 @@ nimblestudio_list_studio_components <- function(maxResults = NULL, nextToken = N
 #' @description
 #' Get all users in a given studio membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_studio_members.html](https://paws-r.github.io/docs/nimblestudio/list_studio_members.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_studio_members/](https://www.paws-r-sdk.com/docs/nimblestudio_list_studio_members/) for full documentation.
 #'
 #' @param maxResults The max number of results to return in the response.
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -1123,15 +1196,16 @@ nimblestudio_list_studio_members <- function(maxResults = NULL, nextToken = NULL
 }
 .nimblestudio$operations$list_studio_members <- nimblestudio_list_studio_members
 
-#' List studios in your Amazon Web Services account in the requested Amazon
-#' Web Services Region
+#' List studios in your Amazon Web Services accounts in the requested
+#' Amazon Web Services Region
 #'
 #' @description
-#' List studios in your Amazon Web Services account in the requested Amazon Web Services Region.
+#' List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_studios.html](https://paws-r.github.io/docs/nimblestudio/list_studios.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_studios/](https://www.paws-r-sdk.com/docs/nimblestudio_list_studios/) for full documentation.
 #'
-#' @param nextToken The token to request the next page of results.
+#' @param nextToken The token for the next set of results, or null if there are no more
+#' results.
 #'
 #' @keywords internal
 #'
@@ -1158,7 +1232,7 @@ nimblestudio_list_studios <- function(nextToken = NULL) {
 #' @description
 #' Gets the tags for a resource, given its Amazon Resource Names (ARN).
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/list_tags_for_resource.html](https://paws-r.github.io/docs/nimblestudio/list_tags_for_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/nimblestudio_list_tags_for_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want to
 #' list tags.
@@ -1188,14 +1262,15 @@ nimblestudio_list_tags_for_resource <- function(resourceArn) {
 #' @description
 #' Add/update users with given persona to launch profile membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/put_launch_profile_members.html](https://paws-r.github.io/docs/nimblestudio/put_launch_profile_members.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_put_launch_profile_members/](https://www.paws-r-sdk.com/docs/nimblestudio_put_launch_profile_members/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param identityStoreId &#91;required&#93; The ID of the identity store.
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param members &#91;required&#93; A list of members.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
@@ -1224,12 +1299,12 @@ nimblestudio_put_launch_profile_members <- function(clientToken = NULL, identity
 #' @description
 #' Add/update users with given persona to studio membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/put_studio_members.html](https://paws-r.github.io/docs/nimblestudio/put_studio_members.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_put_studio_members/](https://www.paws-r-sdk.com/docs/nimblestudio_put_studio_members/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param identityStoreId &#91;required&#93; The ID of the identity store.
 #' @param members &#91;required&#93; A list of members.
 #' @param studioId &#91;required&#93; The studio ID.
@@ -1257,28 +1332,29 @@ nimblestudio_put_studio_members <- function(clientToken = NULL, identityStoreId,
 #' Transitions sessions from the STOPPED state into the READY state
 #'
 #' @description
-#' Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate state between the STOPPED and READY states.
+#' Transitions sessions from the `STOPPED` state into the `READY` state. The `START_IN_PROGRESS` state is the intermediate state between the `STOPPED` and `READY` states.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/start_streaming_session.html](https://paws-r.github.io/docs/nimblestudio/start_streaming_session.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_start_streaming_session/](https://www.paws-r-sdk.com/docs/nimblestudio_start_streaming_session/) for full documentation.
 #'
+#' @param backupId The ID of the backup.
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param sessionId &#91;required&#93; The streaming session ID for the StartStreamingSessionRequest.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param sessionId &#91;required&#93; The streaming session ID for the `StartStreamingSessionRequest`.
 #' @param studioId &#91;required&#93; The studio ID for the StartStreamingSessionRequest.
 #'
 #' @keywords internal
 #'
 #' @rdname nimblestudio_start_streaming_session
-nimblestudio_start_streaming_session <- function(clientToken = NULL, sessionId, studioId) {
+nimblestudio_start_streaming_session <- function(backupId = NULL, clientToken = NULL, sessionId, studioId) {
   op <- new_operation(
     name = "StartStreamingSession",
     http_method = "POST",
     http_path = "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/start",
     paginator = list()
   )
-  input <- .nimblestudio$start_streaming_session_input(clientToken = clientToken, sessionId = sessionId, studioId = studioId)
+  input <- .nimblestudio$start_streaming_session_input(backupId = backupId, clientToken = clientToken, sessionId = sessionId, studioId = studioId)
   output <- .nimblestudio$start_streaming_session_output()
   config <- get_config()
   svc <- .nimblestudio$service(config)
@@ -1288,17 +1364,17 @@ nimblestudio_start_streaming_session <- function(clientToken = NULL, sessionId, 
 }
 .nimblestudio$operations$start_streaming_session <- nimblestudio_start_streaming_session
 
-#' Repairs the Amazon Web Services SSO configuration for a given studio
+#' Repairs the IAM Identity Center configuration for a given studio
 #'
 #' @description
-#' Repairs the Amazon Web Services SSO configuration for a given studio.
+#' Repairs the IAM Identity Center configuration for a given studio.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/start_studio_sso_configuration_repair.html](https://paws-r.github.io/docs/nimblestudio/start_studio_sso_configuration_repair.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_start_studio_sso_configuration_repair/](https://www.paws-r-sdk.com/docs/nimblestudio_start_studio_sso_configuration_repair/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -1324,28 +1400,30 @@ nimblestudio_start_studio_sso_configuration_repair <- function(clientToken = NUL
 #' Transitions sessions from the READY state into the STOPPED state
 #'
 #' @description
-#' Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED states.
+#' Transitions sessions from the `READY` state into the `STOPPED` state. The `STOP_IN_PROGRESS` state is the intermediate state between the `READY` and `STOPPED` states.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/stop_streaming_session.html](https://paws-r.github.io/docs/nimblestudio/stop_streaming_session.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_stop_streaming_session/](https://www.paws-r-sdk.com/docs/nimblestudio_stop_streaming_session/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param sessionId &#91;required&#93; The streaming session ID for the StopStreamingSessionRequest.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param sessionId &#91;required&#93; The streaming session ID for the `StopStreamingSessionRequest`.
 #' @param studioId &#91;required&#93; The studioId for the StopStreamingSessionRequest.
+#' @param volumeRetentionMode Adds additional instructions to a streaming session stop action to
+#' either retain the EBS volumes or delete the EBS volumes.
 #'
 #' @keywords internal
 #'
 #' @rdname nimblestudio_stop_streaming_session
-nimblestudio_stop_streaming_session <- function(clientToken = NULL, sessionId, studioId) {
+nimblestudio_stop_streaming_session <- function(clientToken = NULL, sessionId, studioId, volumeRetentionMode = NULL) {
   op <- new_operation(
     name = "StopStreamingSession",
     http_method = "POST",
     http_path = "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/stop",
     paginator = list()
   )
-  input <- .nimblestudio$stop_streaming_session_input(clientToken = clientToken, sessionId = sessionId, studioId = studioId)
+  input <- .nimblestudio$stop_streaming_session_input(clientToken = clientToken, sessionId = sessionId, studioId = studioId, volumeRetentionMode = volumeRetentionMode)
   output <- .nimblestudio$stop_streaming_session_output()
   config <- get_config()
   svc <- .nimblestudio$service(config)
@@ -1360,10 +1438,10 @@ nimblestudio_stop_streaming_session <- function(clientToken = NULL, sessionId, s
 #' @description
 #' Creates tags for a resource, given its ARN.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/tag_resource.html](https://paws-r.github.io/docs/nimblestudio/tag_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_tag_resource/](https://www.paws-r-sdk.com/docs/nimblestudio_tag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource you want to add tags to.
-#' @param tags A collection of labels, in the form of key:value pairs, that apply to
+#' @param tags A collection of labels, in the form of key-value pairs, that apply to
 #' this resource.
 #'
 #' @keywords internal
@@ -1391,7 +1469,7 @@ nimblestudio_tag_resource <- function(resourceArn, tags = NULL) {
 #' @description
 #' Deletes the tags for a resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/untag_resource.html](https://paws-r.github.io/docs/nimblestudio/untag_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_untag_resource/](https://www.paws-r-sdk.com/docs/nimblestudio_untag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; Identifies the Amazon Resource Name(ARN) key from which you are removing
 #' tags.
@@ -1422,14 +1500,15 @@ nimblestudio_untag_resource <- function(resourceArn, tagKeys) {
 #' @description
 #' Update a launch profile.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/update_launch_profile.html](https://paws-r.github.io/docs/nimblestudio/update_launch_profile.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_update_launch_profile/](https://www.paws-r-sdk.com/docs/nimblestudio_update_launch_profile/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param description The description.
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param launchProfileProtocolVersions The version number of the protocol that is used by the launch profile.
 #' The only valid version is "2021-03-31".
 #' @param name The name for the launch profile.
@@ -1463,16 +1542,16 @@ nimblestudio_update_launch_profile <- function(clientToken = NULL, description =
 #' @description
 #' Update a user persona in launch profile membership.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/update_launch_profile_member.html](https://paws-r.github.io/docs/nimblestudio/update_launch_profile_member.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_update_launch_profile_member/](https://www.paws-r-sdk.com/docs/nimblestudio_update_launch_profile_member/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
-#' @param launchProfileId &#91;required&#93; The Launch Profile ID.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
+#' @param launchProfileId &#91;required&#93; The ID of the launch profile used to control access from the streaming
+#' session.
 #' @param persona &#91;required&#93; The persona.
-#' @param principalId &#91;required&#93; The principal ID. This currently supports a Amazon Web Services SSO
-#' UserId.
+#' @param principalId &#91;required&#93; The principal ID. This currently supports a IAM Identity Center UserId.
 #' @param studioId &#91;required&#93; The studio ID.
 #'
 #' @keywords internal
@@ -1500,12 +1579,12 @@ nimblestudio_update_launch_profile_member <- function(clientToken = NULL, launch
 #' @description
 #' Update streaming image.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/update_streaming_image.html](https://paws-r.github.io/docs/nimblestudio/update_streaming_image.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_update_streaming_image/](https://www.paws-r-sdk.com/docs/nimblestudio_update_streaming_image/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param description The description.
 #' @param name The name for the streaming image.
 #' @param streamingImageId &#91;required&#93; The streaming image ID.
@@ -1536,14 +1615,14 @@ nimblestudio_update_streaming_image <- function(clientToken = NULL, description 
 #' @description
 #' Update a Studio resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/update_studio.html](https://paws-r.github.io/docs/nimblestudio/update_studio.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_update_studio/](https://www.paws-r-sdk.com/docs/nimblestudio_update_studio/) for full documentation.
 #'
 #' @param adminRoleArn The IAM role that Studio Admins will assume when logging in to the
 #' Nimble Studio portal.
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param displayName A friendly name for the studio.
 #' @param studioId &#91;required&#93; The studio ID.
 #' @param userRoleArn The IAM role that Studio Users will assume when logging in to the Nimble
@@ -1574,24 +1653,24 @@ nimblestudio_update_studio <- function(adminRoleArn = NULL, clientToken = NULL, 
 #' @description
 #' Updates a studio component resource.
 #'
-#' See [https://paws-r.github.io/docs/nimblestudio/update_studio_component.html](https://paws-r.github.io/docs/nimblestudio/update_studio_component.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/nimblestudio_update_studio_component/](https://www.paws-r-sdk.com/docs/nimblestudio_update_studio_component/) for full documentation.
 #'
 #' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the AWS
-#' SDK automatically generates a client token and uses it for the request
-#' to ensure idempotency.
+#' idempotency of the request. If you don’t specify a client token, the
+#' Amazon Web Services SDK automatically generates a client token and uses
+#' it for the request to ensure idempotency.
 #' @param configuration The configuration of the studio component, based on component type.
 #' @param description The description.
 #' @param ec2SecurityGroupIds The EC2 security groups that control access to the studio component.
 #' @param initializationScripts Initialization scripts for studio components.
 #' @param name The name for the studio component.
 #' @param runtimeRoleArn An IAM role attached to a Studio Component that gives the studio
-#' component access to AWS resources at anytime while the instance is
-#' running.
+#' component access to Amazon Web Services resources at anytime while the
+#' instance is running.
 #' @param scriptParameters Parameters for the studio component scripts.
 #' @param secureInitializationRoleArn An IAM role attached to Studio Component when the system initialization
-#' script runs which give the studio component access to AWS resources when
-#' the system initialization script runs.
+#' script runs which give the studio component access to Amazon Web
+#' Services resources when the system initialization script runs.
 #' @param studioComponentId &#91;required&#93; The studio component ID.
 #' @param studioId &#91;required&#93; The studio ID.
 #' @param subtype The specific subtype of a studio component.

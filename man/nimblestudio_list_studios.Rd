@@ -2,17 +2,18 @@
 % Please edit documentation in R/nimblestudio_operations.R
 \name{nimblestudio_list_studios}
 \alias{nimblestudio_list_studios}
-\title{List studios in your Amazon Web Services account in the requested Amazon
-Web Services Region}
+\title{List studios in your Amazon Web Services accounts in the requested
+Amazon Web Services Region}
 \usage{
 nimblestudio_list_studios(nextToken = NULL)
 }
 \arguments{
-\item{nextToken}{The token to request the next page of results.}
+\item{nextToken}{The token for the next set of results, or null if there are no more
+results.}
 }
 \description{
-List studios in your Amazon Web Services account in the requested Amazon Web Services Region.
+List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_studios.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_list_studios/} for full documentation.
 }
 \keyword{internal}

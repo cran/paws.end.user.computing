@@ -15,10 +15,10 @@ nimblestudio_list_launch_profiles(
 \arguments{
 \item{maxResults}{The max number of results to return in the response.}
 
-\item{nextToken}{The token to request the next page of results.}
+\item{nextToken}{The token for the next set of results, or null if there are no more
+results.}
 
-\item{principalId}{The principal ID. This currently supports a Amazon Web Services SSO
-UserId.}
+\item{principalId}{The principal ID. This currently supports a IAM Identity Center UserId.}
 
 \item{states}{Filter this request to launch profiles in any of the given states.}
 
@@ -27,6 +27,6 @@ UserId.}
 \description{
 List all the launch profiles a studio.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/list_launch_profiles.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_list_launch_profiles/} for full documentation.
 }
 \keyword{internal}

@@ -7,16 +7,16 @@
 nimblestudio_get_launch_profile_member(launchProfileId, principalId, studioId)
 }
 \arguments{
-\item{launchProfileId}{[required] The Launch Profile ID.}
+\item{launchProfileId}{[required] The ID of the launch profile used to control access from the streaming
+session.}
 
-\item{principalId}{[required] The principal ID. This currently supports a Amazon Web Services SSO
-UserId.}
+\item{principalId}{[required] The principal ID. This currently supports a IAM Identity Center UserId.}
 
 \item{studioId}{[required] The studio ID.}
 }
 \description{
 Get a user persona in launch profile membership.
 
-See \url{https://paws-r.github.io/docs/nimblestudio/get_launch_profile_member.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/nimblestudio_get_launch_profile_member/} for full documentation.
 }
 \keyword{internal}

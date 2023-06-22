@@ -33,12 +33,12 @@ workdocs_create_user(
 
 \item{StorageRule}{The amount of storage for the user.}
 
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using AWS
-administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
+Services administrator credentials to access the API.}
 }
 \description{
 Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is "ACTIVE". New users can access Amazon WorkDocs.
 
-See \url{https://paws-r.github.io/docs/workdocs/create_user.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/workdocs_create_user/} for full documentation.
 }
 \keyword{internal}
