@@ -33,7 +33,8 @@ ivschat_create_chat_token <- function(roomIdentifier, userId, capabilities = NUL
     http_method = "POST",
     http_path = "/CreateChatToken",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$create_chat_token_input(roomIdentifier = roomIdentifier, userId = userId, capabilities = capabilities, sessionDurationInMinutes = sessionDurationInMinutes, attributes = attributes)
   output <- .ivschat$create_chat_token_output()
@@ -58,11 +59,12 @@ ivschat_create_chat_token <- function(roomIdentifier, userId, capabilities = NUL
 #' content will be logged. There can be only one type of destination
 #' (`cloudWatchLogs`, `firehose`, or `s3`) in a `destinationConfiguration`.
 #' @param tags Tags to attach to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Tagging AWS
-#' Resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' for details, including restrictions that apply to tags and "Tag naming
-#' limits and requirements"; Amazon IVS Chat has no constraints on tags
-#' beyond what is documented there.
+#' `string:string (key:value)`. See [Best practices and
+#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
+#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
+#' including restrictions that apply to tags and "Tag naming limits and
+#' requirements"; Amazon IVS Chat has no constraints on tags beyond what is
+#' documented there.
 #'
 #' @keywords internal
 #'
@@ -73,7 +75,8 @@ ivschat_create_logging_configuration <- function(name = NULL, destinationConfigu
     http_method = "POST",
     http_path = "/CreateLoggingConfiguration",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$create_logging_configuration_input(name = name, destinationConfiguration = destinationConfiguration, tags = tags)
   output <- .ivschat$create_logging_configuration_output()
@@ -100,11 +103,12 @@ ivschat_create_logging_configuration <- function(name = NULL, destinationConfigu
 #' rune/code-point count, not number of bytes. Default: 500.
 #' @param messageReviewHandler Configuration information for optional review of messages.
 #' @param tags Tags to attach to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Tagging AWS
-#' Resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' for details, including restrictions that apply to tags and "Tag naming
-#' limits and requirements"; Amazon IVS Chat has no constraints beyond what
-#' is documented there.
+#' `string:string (key:value)`. See [Best practices and
+#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
+#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
+#' including restrictions that apply to tags and "Tag naming limits and
+#' requirements"; Amazon IVS Chat has no constraints beyond what is
+#' documented there.
 #' @param loggingConfigurationIdentifiers Array of logging-configuration identifiers attached to the room.
 #'
 #' @keywords internal
@@ -116,7 +120,8 @@ ivschat_create_room <- function(name = NULL, maximumMessageRatePerSecond = NULL,
     http_method = "POST",
     http_path = "/CreateRoom",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$create_room_input(name = name, maximumMessageRatePerSecond = maximumMessageRatePerSecond, maximumMessageLength = maximumMessageLength, messageReviewHandler = messageReviewHandler, tags = tags, loggingConfigurationIdentifiers = loggingConfigurationIdentifiers)
   output <- .ivschat$create_room_output()
@@ -146,7 +151,8 @@ ivschat_delete_logging_configuration <- function(identifier) {
     http_method = "POST",
     http_path = "/DeleteLoggingConfiguration",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$delete_logging_configuration_input(identifier = identifier)
   output <- .ivschat$delete_logging_configuration_output()
@@ -184,7 +190,8 @@ ivschat_delete_message <- function(roomIdentifier, id, reason = NULL) {
     http_method = "POST",
     http_path = "/DeleteMessage",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$delete_message_input(roomIdentifier = roomIdentifier, id = id, reason = reason)
   output <- .ivschat$delete_message_output()
@@ -214,7 +221,8 @@ ivschat_delete_room <- function(identifier) {
     http_method = "POST",
     http_path = "/DeleteRoom",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$delete_room_input(identifier = identifier)
   output <- .ivschat$delete_room_output()
@@ -247,7 +255,8 @@ ivschat_disconnect_user <- function(roomIdentifier, userId, reason = NULL) {
     http_method = "POST",
     http_path = "/DisconnectUser",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$disconnect_user_input(roomIdentifier = roomIdentifier, userId = userId, reason = reason)
   output <- .ivschat$disconnect_user_output()
@@ -277,7 +286,8 @@ ivschat_get_logging_configuration <- function(identifier) {
     http_method = "POST",
     http_path = "/GetLoggingConfiguration",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$get_logging_configuration_input(identifier = identifier)
   output <- .ivschat$get_logging_configuration_output()
@@ -308,7 +318,8 @@ ivschat_get_room <- function(identifier) {
     http_method = "POST",
     http_path = "/GetRoom",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$get_room_input(identifier = identifier)
   output <- .ivschat$get_room_output()
@@ -341,7 +352,8 @@ ivschat_list_logging_configurations <- function(nextToken = NULL, maxResults = N
     http_method = "POST",
     http_path = "/ListLoggingConfigurations",
     host_prefix = "",
-    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults")
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults"),
+    stream_api = FALSE
   )
   input <- .ivschat$list_logging_configurations_input(nextToken = nextToken, maxResults = maxResults)
   output <- .ivschat$list_logging_configurations_output()
@@ -377,7 +389,8 @@ ivschat_list_rooms <- function(name = NULL, nextToken = NULL, maxResults = NULL,
     http_method = "POST",
     http_path = "/ListRooms",
     host_prefix = "",
-    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults")
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults"),
+    stream_api = FALSE
   )
   input <- .ivschat$list_rooms_input(name = name, nextToken = nextToken, maxResults = maxResults, messageReviewHandlerUri = messageReviewHandlerUri, loggingConfigurationIdentifier = loggingConfigurationIdentifier)
   output <- .ivschat$list_rooms_output()
@@ -407,7 +420,8 @@ ivschat_list_tags_for_resource <- function(resourceArn) {
     http_method = "GET",
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$list_tags_for_resource_input(resourceArn = resourceArn)
   output <- .ivschat$list_tags_for_resource_output()
@@ -441,7 +455,8 @@ ivschat_send_event <- function(roomIdentifier, eventName, attributes = NULL) {
     http_method = "POST",
     http_path = "/SendEvent",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$send_event_input(roomIdentifier = roomIdentifier, eventName = eventName, attributes = attributes)
   output <- .ivschat$send_event_output()
@@ -462,11 +477,12 @@ ivschat_send_event <- function(roomIdentifier, eventName, attributes = NULL) {
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be tagged. The ARN must be URL-encoded.
 #' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Tagging AWS
-#' Resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' for details, including restrictions that apply to tags and "Tag naming
-#' limits and requirements"; Amazon IVS Chat has no constraints beyond what
-#' is documented there.
+#' `string:string (key:value)`. See [Best practices and
+#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
+#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
+#' including restrictions that apply to tags and "Tag naming limits and
+#' requirements"; Amazon IVS Chat has no constraints beyond what is
+#' documented there.
 #'
 #' @keywords internal
 #'
@@ -477,7 +493,8 @@ ivschat_tag_resource <- function(resourceArn, tags) {
     http_method = "POST",
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$tag_resource_input(resourceArn = resourceArn, tags = tags)
   output <- .ivschat$tag_resource_output()
@@ -498,11 +515,12 @@ ivschat_tag_resource <- function(resourceArn, tags) {
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be untagged. The ARN must be URL-encoded.
 #' @param tagKeys &#91;required&#93; Array of tags to be removed. Array of maps, each of the form
-#' `string:string (key:value)`. See [Tagging AWS
-#' Resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' for details, including restrictions that apply to tags and "Tag naming
-#' limits and requirements"; Amazon IVS Chat has no constraints beyond what
-#' is documented there.
+#' `string:string (key:value)`. See [Best practices and
+#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
+#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
+#' including restrictions that apply to tags and "Tag naming limits and
+#' requirements"; Amazon IVS Chat has no constraints beyond what is
+#' documented there.
 #'
 #' @keywords internal
 #'
@@ -513,7 +531,8 @@ ivschat_untag_resource <- function(resourceArn, tagKeys) {
     http_method = "DELETE",
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$untag_resource_input(resourceArn = resourceArn, tagKeys = tagKeys)
   output <- .ivschat$untag_resource_output()
@@ -547,7 +566,8 @@ ivschat_update_logging_configuration <- function(identifier, name = NULL, destin
     http_method = "POST",
     http_path = "/UpdateLoggingConfiguration",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$update_logging_configuration_input(identifier = identifier, name = name, destinationConfiguration = destinationConfiguration)
   output <- .ivschat$update_logging_configuration_output()
@@ -587,7 +607,8 @@ ivschat_update_room <- function(identifier, name = NULL, maximumMessageRatePerSe
     http_method = "POST",
     http_path = "/UpdateRoom",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .ivschat$update_room_input(identifier = identifier, name = name, maximumMessageRatePerSecond = maximumMessageRatePerSecond, maximumMessageLength = maximumMessageLength, messageReviewHandler = messageReviewHandler, loggingConfigurationIdentifiers = loggingConfigurationIdentifiers)
   output <- .ivschat$update_room_output()
