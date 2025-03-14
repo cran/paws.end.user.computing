@@ -1,6 +1,6 @@
 Package: paws.end.user.computing
 Title: 'Amazon Web Services' End User Computing Services
-Version: 0.8.0
+Version: 0.9.0
 Authors@R: c(
     person("David", "Kretch", , "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", , "adam.banker39@gmail.com", role = "aut"),
@@ -33,11 +33,11 @@ Collate: 'appstream_service.R' 'appstream_interfaces.R'
         'workspacesweb_service.R' 'workspacesweb_interfaces.R'
         'workspacesweb_operations.R'
 NeedsCompilation: no
-Packaged: 2025-02-08 17:03:42 UTC; dyfanjones
+Packaged: 2025-03-14 09:21:47 UTC; dyfanjones
 Author: David Kretch [aut],
   Adam Banker [aut],
   Dyfan Jones [cre],
   Amazon.com, Inc. [cph]
 Maintainer: Dyfan Jones <dyfan.r.jones@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-02-10 07:30:02 UTC
+Date/Publication: 2025-03-14 15:30:01 UTC

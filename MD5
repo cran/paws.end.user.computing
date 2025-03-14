@@ -1,6 +1,6 @@
-2031aa4426690cab7bb7b19fa5ac72ec *DESCRIPTION
+9da12be1a3a290de902453fb24db9c89 *DESCRIPTION
 8744f6a2e6b61e096ae4025e2e3b04e8 *NAMESPACE
-7d495d390b288937bea72d55220f7fd0 *R/appstream_interfaces.R
+695b38a2d104f646c3f035f65d74ca7b *R/appstream_interfaces.R
 8c6747b34f4932cd229669b6331d9aaf *R/appstream_operations.R
 d9541b2eaced6ea1ca417abc49910b5e *R/appstream_service.R
 b8012d01665fe7c9a36834c6e660eb7d *R/chatbot_interfaces.R
@@ -22,8 +22,8 @@ fbe8dd87d4d40bdd89b706819db5376e *R/workmailmessageflow_interfaces.R
 b3fe927b7d52fa56c229c89819055efc *R/workspaces_interfaces.R
 a3a2e44a9e3b74088cc55c469aab6c34 *R/workspaces_operations.R
 ba67d2ce59cd5219f9f29fa914c7ee49 *R/workspaces_service.R
-3d8d316c559c9602141e1e910b8e5195 *R/workspacesweb_interfaces.R
-8ad52e746cc3ee57356eff32d1a297e1 *R/workspacesweb_operations.R
+d73448074dd6459ac3c3b1df231f13c5 *R/workspacesweb_interfaces.R
+3015a9a4605f2f4e94311f4b3ee39ecc *R/workspacesweb_operations.R
 df6305e096e54846b80e7af3b4d8f9af *R/workspacesweb_service.R
 e71bcf0a169ca45da37274a5bebf561b *man/appstream.Rd
 29af5054e65473f506bbe1962c8e85a3 *man/appstream_associate_app_block_builder_app_block.Rd
@@ -405,7 +405,7 @@ ff5a482436c36256c7bfdb015763f289 *man/workspacesweb_create_identity_provider.Rd
 affd83d3d114d447a5e5173c9fb483c2 *man/workspacesweb_create_portal.Rd
 9b80c119baa037ce5dc4957758876642 *man/workspacesweb_create_trust_store.Rd
 2f55f9aca0f7e6c0ed69d6e00c40d3ad *man/workspacesweb_create_user_access_logging_settings.Rd
-8168ca4ee7ad287cb62ef133d175fe79 *man/workspacesweb_create_user_settings.Rd
+b1847b2b269689dce8887fb7a5bbb8e3 *man/workspacesweb_create_user_settings.Rd
 a43ae6e90df0a1181ea083b21c19db70 *man/workspacesweb_delete_browser_settings.Rd
 bd8b16d4cfe25654e732c2ad16babc4f *man/workspacesweb_delete_data_protection_settings.Rd
 19f8f0d9d07eeeeae7a3102bf33b9e29 *man/workspacesweb_delete_identity_provider.Rd
@@ -457,7 +457,7 @@ dcdfc58dc0bbaa9c052df8a11aa5947d *man/workspacesweb_update_network_settings.Rd
 8e1d24bb6546d02790d47b792a2b3288 *man/workspacesweb_update_portal.Rd
 cd3b2458e5ef2bfb6407369850a1b0e5 *man/workspacesweb_update_trust_store.Rd
 1704881fd00e8850509e4f8ad63ef772 *man/workspacesweb_update_user_access_logging_settings.Rd
-0bca039eed126c87350a0a0bcdc57301 *man/workspacesweb_update_user_settings.Rd
+4e2a372b9ad9f6432489724b052bbf22 *man/workspacesweb_update_user_settings.Rd
 3270d214160f924c712e317af100f363 *tests/testthat/test_appstream.R
 caac84f5d2fdebce0de70d25f454e4a9 *tests/testthat/test_chatbot.R
 c206bab8c5842d38ad039dfa38d3d6cc *tests/testthat/test_ivschat.R
