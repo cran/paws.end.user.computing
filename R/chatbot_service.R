@@ -5,9 +5,7 @@ NULL
 #' AWS Chatbot
 #'
 #' @description
-#' The *AWS Chatbot API Reference* provides descriptions, API request
-#' parameters, and the XML response for each of the AWS Chatbot API
-#' actions.
+#' The *AWS Chatbot API Reference* provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions.
 #' 
 #' AWS Chatbot APIs are currently available in the following Regions:
 #' 
@@ -19,12 +17,9 @@ NULL
 #' 
 #' -   Europe (Ireland) - `eu-west-1`
 #' 
-#' The AWS Chatbot console can only be used in US East (Ohio). Your
-#' configuration data however, is stored in each of the relevant available
-#' Regions.
+#' The AWS Chatbot console can only be used in US East (Ohio). Your configuration data however, is stored in each of the relevant available Regions.
 #' 
-#' Your AWS CloudTrail events are logged in whatever Region you call from,
-#' not US East (N. Virginia) by default.
+#' Your AWS CloudTrail events are logged in whatever Region you call from, not US East (N. Virginia) by default.
 #'
 #' @param
 #' config
@@ -174,7 +169,7 @@ chatbot <- function(config = list(), credentials = list(), endpoint = NULL, regi
 
 .chatbot$metadata <- list(
   service_name = "chatbot",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "chatbot.{region}.amazonaws.eu", global = FALSE)),
   service_id = "chatbot",
   api_version = "2017-10-11",
   signing_name = "chatbot",

@@ -9,15 +9,12 @@ appstream_enable_user(UserName, AuthenticationType)
 \arguments{
 \item{UserName}{[required] The email address of the user.
 
-Users' email addresses are case-sensitive. During login, if they specify
-an email address that doesn't use the same capitalization as the email
-address specified when their user pool account was created, a "user does
-not exist" error message displays.}
+Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.}
 
 \item{AuthenticationType}{[required] The authentication type for the user. You must specify USERPOOL.}
 }
 \description{
-Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.
+Enables a user in the user pool. After being enabled, users can sign in to WorkSpaces Applications and open applications from the stacks to which they are assigned.
 
 See \url{https://www.paws-r-sdk.com/docs/appstream_enable_user/} for full documentation.
 }

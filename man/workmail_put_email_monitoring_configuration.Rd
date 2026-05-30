@@ -7,19 +7,16 @@ organization}
 \usage{
 workmail_put_email_monitoring_configuration(
   OrganizationId,
-  RoleArn,
+  RoleArn = NULL,
   LogGroupArn
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The ID of the organization for which the email monitoring configuration
-is set.}
+\item{OrganizationId}{[required] The ID of the organization for which the email monitoring configuration is set.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM Role associated with the email
-monitoring configuration.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration. If absent, the IAM Role Arn of AWSServiceRoleForAmazonWorkMailEvents will be used.}
 
-\item{LogGroupArn}{[required] The Amazon Resource Name (ARN) of the CloudWatch Log group associated
-with the email monitoring configuration.}
+\item{LogGroupArn}{[required] The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.}
 }
 \description{
 Creates or updates the email monitoring configuration for a specified organization.

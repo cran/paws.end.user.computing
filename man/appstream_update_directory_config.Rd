@@ -2,7 +2,7 @@
 % Please edit documentation in R/appstream_operations.R
 \name{appstream_update_directory_config}
 \alias{appstream_update_directory_config}
-\title{Updates the specified Directory Config object in AppStream 2}
+\title{Updates the specified Directory Config object in WorkSpaces Applications}
 \usage{
 appstream_update_directory_config(
   DirectoryName,
@@ -14,25 +14,14 @@ appstream_update_directory_config(
 \arguments{
 \item{DirectoryName}{[required] The name of the Directory Config object.}
 
-\item{OrganizationalUnitDistinguishedNames}{The distinguished names of the organizational units for computer
-accounts.}
+\item{OrganizationalUnitDistinguishedNames}{The distinguished names of the organizational units for computer accounts.}
 
-\item{ServiceAccountCredentials}{The credentials for the service account used by the fleet or image
-builder to connect to the directory.}
+\item{ServiceAccountCredentials}{The credentials for the service account used by the fleet or image builder to connect to the directory.}
 
-\item{CertificateBasedAuthProperties}{The certificate-based authentication properties used to authenticate
-SAML 2.0 Identity Provider (IdP) user identities to Active Directory
-domain-joined streaming instances. Fallback is turned on by default when
-certificate-based authentication is \strong{Enabled} . Fallback allows users
-to log in using their AD domain password if certificate-based
-authentication is unsuccessful, or to unlock a desktop lock screen.
-\strong{Enabled_no_directory_login_fallback} enables certificate-based
-authentication, but does not allow users to log in using their AD domain
-password. Users will be disconnected to re-authenticate using
-certificates.}
+\item{CertificateBasedAuthProperties}{The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is \strong{Enabled} . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. \strong{Enabled_no_directory_login_fallback} enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.}
 }
 \description{
-Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
+Updates the specified Directory Config object in WorkSpaces Applications. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
 
 See \url{https://www.paws-r-sdk.com/docs/appstream_update_directory_config/} for full documentation.
 }

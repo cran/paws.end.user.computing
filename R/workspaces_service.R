@@ -7,32 +7,11 @@ NULL
 #' @description
 #' Amazon WorkSpaces Service
 #' 
-#' Amazon WorkSpaces enables you to provision virtual, cloud-based
-#' Microsoft Windows or Amazon Linux desktops for your users, known as
-#' *WorkSpaces*. WorkSpaces eliminates the need to procure and deploy
-#' hardware or install complex software. You can quickly add or remove
-#' users as your needs change. Users can access their virtual desktops from
-#' multiple devices or web browsers.
+#' Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops for your users, known as *WorkSpaces*. WorkSpaces eliminates the need to procure and deploy hardware or install complex software. You can quickly add or remove users as your needs change. Users can access their virtual desktops from multiple devices or web browsers.
 #' 
-#' This API Reference provides detailed information about the actions, data
-#' types, parameters, and errors of the WorkSpaces service. For more
-#' information about the supported Amazon Web Services Regions, endpoints,
-#' and service quotas of the Amazon WorkSpaces service, see [WorkSpaces
-#' endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/wsp.html) in the
-#' *Amazon Web Services General Reference*.
+#' This API Reference provides detailed information about the actions, data types, parameters, and errors of the WorkSpaces service. For more information about the supported Amazon Web Services Regions, endpoints, and service quotas of the Amazon WorkSpaces service, see [WorkSpaces endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/wsp.html) in the *Amazon Web Services General Reference*.
 #' 
-#' You can also manage your WorkSpaces resources using the WorkSpaces
-#' console, Command Line Interface (CLI), and SDKs. For more information
-#' about administering WorkSpaces, see the [Amazon WorkSpaces
-#' Administration
-#' Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/). For
-#' more information about using the Amazon WorkSpaces client application or
-#' web browser to access provisioned WorkSpaces, see the [Amazon WorkSpaces
-#' User Guide](https://docs.aws.amazon.com/workspaces/latest/userguide/).
-#' For more information about using the CLI to manage your WorkSpaces
-#' resources, see the [WorkSpaces section of the CLI
-#' Reference](https://docs.aws.amazon.com/cli/latest/reference/workspaces/).
+#' You can also manage your WorkSpaces resources using the WorkSpaces console, Command Line Interface (CLI), and SDKs. For more information about administering WorkSpaces, see the [Amazon WorkSpaces Administration Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/). For more information about using the Amazon WorkSpaces client application or web browser to access provisioned WorkSpaces, see the [Amazon WorkSpaces User Guide](https://docs.aws.amazon.com/workspaces/latest/userguide/). For more information about using the CLI to manage your WorkSpaces resources, see the [WorkSpaces section of the CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/workspaces/).
 #'
 #' @param
 #' config
@@ -154,6 +133,7 @@ NULL
 #'  \link[=workspaces_describe_connect_client_add_ins]{describe_connect_client_add_ins} \tab Retrieves a list of Amazon Connect client add-ins that have been created\cr
 #'  \link[=workspaces_describe_connection_aliases]{describe_connection_aliases} \tab Retrieves a list that describes the connection aliases used for cross-Region redirection\cr
 #'  \link[=workspaces_describe_connection_alias_permissions]{describe_connection_alias_permissions} \tab Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias\cr
+#'  \link[=workspaces_describe_custom_workspace_image_import]{describe_custom_workspace_image_import} \tab Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage\cr
 #'  \link[=workspaces_describe_image_associations]{describe_image_associations} \tab Describes the associations between the applications and the specified image\cr
 #'  \link[=workspaces_describe_ip_groups]{describe_ip_groups} \tab Describes one or more of your IP access control groups\cr
 #'  \link[=workspaces_describe_tags]{describe_tags} \tab Describes the specified tags for the specified WorkSpaces resource\cr
@@ -172,6 +152,7 @@ NULL
 #'  \link[=workspaces_disassociate_workspace_application]{disassociate_workspace_application} \tab Disassociates the specified application from a WorkSpace\cr
 #'  \link[=workspaces_get_account_link]{get_account_link} \tab Retrieves account link information\cr
 #'  \link[=workspaces_import_client_branding]{import_client_branding} \tab Imports client branding\cr
+#'  \link[=workspaces_import_custom_workspace_image]{import_custom_workspace_image} \tab Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces using EC2 Image Builder\cr
 #'  \link[=workspaces_import_workspace_image]{import_workspace_image} \tab Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces\cr
 #'  \link[=workspaces_list_account_links]{list_account_links} \tab Lists all account links\cr
 #'  \link[=workspaces_list_available_management_cidr_ranges]{list_available_management_cidr_ranges} \tab Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL)\cr
@@ -179,6 +160,7 @@ NULL
 #'  \link[=workspaces_modify_account]{modify_account} \tab Modifies the configuration of Bring Your Own License (BYOL) for the specified account\cr
 #'  \link[=workspaces_modify_certificate_based_auth_properties]{modify_certificate_based_auth_properties} \tab Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces\cr
 #'  \link[=workspaces_modify_client_properties]{modify_client_properties} \tab Modifies the properties of the specified Amazon WorkSpaces clients\cr
+#'  \link[=workspaces_modify_endpoint_encryption_mode]{modify_endpoint_encryption_mode} \tab Modifies the endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode\cr
 #'  \link[=workspaces_modify_saml_properties]{modify_saml_properties} \tab Modifies multiple properties related to SAML 2\cr
 #'  \link[=workspaces_modify_selfservice_permissions]{modify_selfservice_permissions} \tab Modifies the self-service WorkSpace management capabilities for your users\cr
 #'  \link[=workspaces_modify_streaming_properties]{modify_streaming_properties} \tab Modifies the specified streaming properties\cr
@@ -236,7 +218,7 @@ workspaces <- function(config = list(), credentials = list(), endpoint = NULL, r
 
 .workspaces$metadata <- list(
   service_name = "workspaces",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "workspaces.{region}.amazonaws.eu", global = FALSE)),
   service_id = "WorkSpaces",
   api_version = "2015-04-08",
   signing_name = "workspaces",

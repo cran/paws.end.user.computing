@@ -7,40 +7,15 @@ NULL
 #' @description
 #' The Amazon WorkDocs API is designed for the following use cases:
 #' 
-#' -   File Migration: File migration applications are supported for users
-#'     who want to migrate their files from an on-premises or off-premises
-#'     file system or service. Users can insert files into a user directory
-#'     structure, as well as allow for basic metadata changes, such as
-#'     modifications to the permissions of files.
+#' -   File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.
 #' 
-#' -   Security: Support security applications are supported for users who
-#'     have additional security needs, such as antivirus or data loss
-#'     prevention. The API actions, along with CloudTrail, allow these
-#'     applications to detect when changes occur in Amazon WorkDocs. Then,
-#'     the application can take the necessary actions and replace the
-#'     target file. If the target file violates the policy, the application
-#'     can also choose to email the user.
+#' -   Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.
 #' 
-#' -   eDiscovery/Analytics: General administrative applications are
-#'     supported, such as eDiscovery and analytics. These applications can
-#'     choose to mimic or record the actions in an Amazon WorkDocs site,
-#'     along with CloudTrail, to replicate data for eDiscovery, backup, or
-#'     analytical applications.
+#' -   eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.
 #' 
-#' All Amazon WorkDocs API actions are Amazon authenticated and
-#' certificate-signed. They not only require the use of the Amazon Web
-#' Services SDK, but also allow for the exclusive use of IAM users and
-#' roles to help facilitate access, trust, and permission policies. By
-#' creating a role and allowing an IAM user to access the Amazon WorkDocs
-#' site, the IAM user gains full administrative visibility into the entire
-#' Amazon WorkDocs site (or as set in the IAM policy). This includes, but
-#' is not limited to, the ability to modify file permissions and upload any
-#' file to any user. This allows developers to perform the three use cases
-#' above, as well as give users the ability to grant access on a selective
-#' basis using the IAM model.
+#' All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the Amazon Web Services SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.
 #' 
-#' The pricing for Amazon WorkDocs APIs varies depending on the API call
-#' type for these actions:
+#' The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
 #' 
 #' -   `READ (Get*)`
 #' 
@@ -50,8 +25,7 @@ NULL
 #' 
 #' -   `DELETE*, CANCEL`
 #' 
-#' For information about Amazon WorkDocs API pricing, see [Amazon WorkDocs
-#' Pricing](https://aws.amazon.com/workdocs/pricing/).
+#' For information about Amazon WorkDocs API pricing, see [Amazon WorkDocs Pricing](https://aws.amazon.com/).
 #'
 #' @param
 #' config
@@ -211,7 +185,7 @@ workdocs <- function(config = list(), credentials = list(), endpoint = NULL, reg
 
 .workdocs$metadata <- list(
   service_name = "workdocs",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "workdocs.{region}.amazonaws.eu", global = FALSE)),
   service_id = "WorkDocs",
   api_version = "2016-05-01",
   signing_name = "workdocs",
