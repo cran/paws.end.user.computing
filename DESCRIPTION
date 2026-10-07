@@ -1,6 +1,6 @@
 Package: paws.end.user.computing
 Title: 'Amazon Web Services' End User Computing Services
-Version: 0.10.0
+Version: 0.11.0
 Authors@R: c(
     person("David", "Kretch", , "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", , "adam.banker39@gmail.com", role = "aut"),
@@ -15,10 +15,11 @@ URL: https://github.com/paws-r/paws,
         https://paws-r.r-universe.dev/paws.end.user.computing,
         https://www.paws-r-sdk.com
 BugReports: https://github.com/paws-r/paws/issues
-Imports: paws.common (>= 0.8.0)
+Depends: R (>= 3.5.0)
+Imports: paws.common (>= 0.9.0)
 Suggests: testthat
 Encoding: UTF-8
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0
 Collate: 'appstream_service.R' 'appstream_interfaces.R'
         'appstream_operations.R' 'chatbot_service.R'
         'chatbot_interfaces.R' 'chatbot_operations.R'
@@ -34,11 +35,11 @@ Collate: 'appstream_service.R' 'appstream_interfaces.R'
         'workspacesweb_service.R' 'workspacesweb_interfaces.R'
         'workspacesweb_operations.R'
 NeedsCompilation: no
-Packaged: 2026-05-29 17:22:04 UTC; dyfan
+Packaged: 2026-10-07 17:46:10 UTC; Dyfan.Jones
 Author: David Kretch [aut],
   Adam Banker [aut],
   Dyfan Jones [cre],
   Amazon.com, Inc. [cph]
 Maintainer: Dyfan Jones <dyfan.r.jones@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-05-30 05:11:09 UTC
+Date/Publication: 2026-10-07 19:40:02 UTC
